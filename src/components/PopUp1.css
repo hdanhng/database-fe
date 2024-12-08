@@ -1,0 +1,83 @@
+.popup1-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .popup1-container {
+    width: 429px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .popup1-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .popup1-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .popup1-field label {
+    font-size: 13px;
+    font-weight: 300;
+    color: #000;
+    flex: 1;
+    text-align: left;
+  }
+  
+  .popup1-field input {
+    width: 258px;
+    height: 22px;
+    background: #f9f1e7;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  
+  .popup1-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .popup1-buttons button {
+    width: 72px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .popup1-buttons .cancel-btn {
+    background: #f4f4f4;
+    color: #000;
+  }
+  
+  .popup1-buttons .save-btn {
+    background: #f9f1e7;
+    color: #000;
+    font-weight: bold;
+  }
+  
