@@ -1,5 +1,15 @@
 import api from './api';
 
+export const fetchProducts = async () => {
+    try {
+        const response = await api.get('/products/all');
+        return response;
+    } catch (error) {
+        console.error('Error fetching orders:', error);
+        throw error;
+    }
+};
+
 
 export const fetchProductSales = async (quanlity) => {
     try {
