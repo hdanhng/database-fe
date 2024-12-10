@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import CustomerManagement from './components/CustomerManagement';
-import ProductManagement from './components/ProductManagement';
-import OrderManagement from './components/OrderManagement';
+
+import OrderManagement from './components/OrderManagement/OrderManagement';
+import InsertOrders from './components/OrderManagement/OrderInsert'
 import { GlobalStyle } from './GlobalStyle'; // Import styled-components GlobalStyle
 
 const App = () => {
@@ -10,9 +10,8 @@ const App = () => {
     <>
       <GlobalStyle /> {/* Áp dụng font toàn cục */}
       <Routes>
-        <Route path="/customers" element={<CustomerManagement />} />
-        <Route path="/products" element={<ProductManagement />} />
         <Route path="/orders" element={<OrderManagement />} />
+        <Route path="/orders-insert" element={<InsertOrders />} />
       </Routes>
     </>
   );
