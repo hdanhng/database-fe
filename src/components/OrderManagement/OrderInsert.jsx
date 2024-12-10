@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './OrderInsert.css';
 
 const InsertOrders = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +10,7 @@ const InsertOrders = () => {
     diaChiGiaoHang: "",
   });
 
-  const [message, setMessage] = useState(""); // Để hiển thị thông báo thành công hoặc lỗi
+  const [message, setMessage] = useState(""); // To display success or error messages
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,12 +21,12 @@ const InsertOrders = () => {
     e.preventDefault();
 
     try {
-      // Gửi dữ liệu đến backend bằng axios
+      // Send data to backend using axios
       const response = await axios.post("http://localhost:8080/orders/insert", formData);
 
       if (response.status === 200) {
-        setMessage("Đơn hàng đã được thêm thành công!");
-        // Reset form sau khi thêm thành công
+        setMessage("Order inserted successfully!");
+        // Reset form after successful insertion
         setFormData({
           maDonHang: "",
           maKhachHang: "",
@@ -33,67 +34,69 @@ const InsertOrders = () => {
           diaChiGiaoHang: "",
         });
       } else {
-        setMessage("Có lỗi xảy ra, vui lòng thử lại.");
+        setMessage("An error occurred, please try again.");
       }
     } catch (error) {
       if (error.response) {
-        // Lỗi từ phía server
-        setMessage(error.response.data.message || "Lỗi từ backend.");
+        // Server error
+        setMessage(error.response.data.message || "Backend error.");
       } else {
-        // Lỗi kết nối
-        setMessage("Không thể kết nối đến server.");
+        // Connection error
+        setMessage("Cannot connect to the server.");
       }
     }
   };
 
   return (
-    <div style={{ margin: "20px" }}>
-      <h2>Thêm Đơn Hàng Mới</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Mã Đơn Hàng:</label>
-          <input
-            type="number"
-            name="maDonHang"
-            value={formData.maDonHang}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Mã Khách Hàng:</label>
-          <input
-            type="number"
-            name="maKhachHang"
-            value={formData.maKhachHang}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Ngày Đặt Hàng:</label>
-          <input
-            type="date"
-            name="ngayDatHang"
-            value={formData.ngayDatHang}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Địa Chỉ Giao Hàng:</label>
-          <input
-            type="text"
-            name="diaChiGiaoHang"
-            value={formData.diaChiGiaoHang}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit" style={{ marginTop: "10px" }}>Thêm Đơn Hàng</button>
-      </form>
-      {message && <p style={{ color: "green", marginTop: "10px" }}>{message}</p>}
-    </div>
+      <div className="order-insert-container">
+        <h2>Insert Order</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-box">
+            <div>
+              <label>Order ID:</label>
+              <input
+                  type="number"
+                  name="maDonHang"
+                  value={formData.maDonHang}
+                  onChange={handleChange}
+                  required
+              />
+            </div>
+            <div>
+              <label>Customer ID:</label>
+              <input
+                  type="number"
+                  name="maKhachHang"
+                  value={formData.maKhachHang}
+                  onChange={handleChange}
+                  required
+              />
+            </div>
+            <div>
+              <label>Order Date:</label>
+              <input
+                  type="date"
+                  name="ngayDatHang"
+                  value={formData.ngayDatHang}
+                  onChange={handleChange}
+                  required
+              />
+            </div>
+            <div>
+              <label>Delivery Address:</label>
+              <input
+                  type="text"
+                  name="diaChiGiaoHang"
+                  value={formData.diaChiGiaoHang}
+                  onChange={handleChange}
+                  required
+              />
+            </div>
+          </div>
+          <button type="submit">Insert Order</button>
+        </form>
+        {message && <p>{message}</p>}
+      </div>
   );
 };
 

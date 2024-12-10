@@ -1,0 +1,65 @@
+/* OrderDelete.css */
+.order-delete-container {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.order-delete-container h2 {
+    margin-bottom: 20px;
+}
+
+.order-delete-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-delete-container form .form-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.order-delete-container form .form-box div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-delete-container form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 40%;
+}
+
+.order-delete-container form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 55%;
+}
+
+.order-delete-container form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.order-delete-container form button:hover {
+    background-color: #e53935;
+}
+
+.order-delete-container p {
+    color: green;
+    margin-top: 10px;
+}

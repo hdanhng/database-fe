@@ -1,0 +1,63 @@
+/* ProductSales.css */
+.product-sales-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-sales-container h2 {
+    margin-bottom: 20px;
+}
+
+.product-sales-container .form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-sales-container .form-box input {
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.product-sales-container .form-box button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-sales-container .form-box button:hover {
+    background-color: #45a049;
+}
+
+.product-sales-container .product-sales-table table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-sales-container .product-sales-table th,
+.product-sales-container .product-sales-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.product-sales-container .product-sales-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.product-sales-container .error {
+    color: red;
+    margin-top: 10px;
+}
